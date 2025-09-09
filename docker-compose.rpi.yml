@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  ksys-lite:
+    build: 
+      context: .
+      dockerfile: Dockerfile.rpi
+    container_name: ksys-lite-rpi
+    ports:
+      - "13000:13000"
+    environment:
+      - DB_HOST_TYPE=${DB_HOST_TYPE:-local}
+      - DB_HOST=${DB_HOST:-192.168.100.29}
+      - TS_DSN=${TS_DSN}
+      - INFLUX_HOST=${INFLUX_HOST:-192.168.100.29}
+      - INFLUX_PORT=${INFLUX_PORT:-8086}
+      - TZ=Asia/Seoul
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+    mem_limit: 512m
+    mem_reservation: 256m
+    cpus: 2
+    networks:
+      - ksys-network
+
+networks:
+  ksys-network:
+    driver: bridge
