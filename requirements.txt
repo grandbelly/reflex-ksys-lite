@@ -1,0 +1,11 @@
+# Core dependencies only - lightweight for Raspberry Pi
+reflex==0.8.9
+psycopg[binary,pool]>=3.1
+pydantic>=2.6
+cachetools>=5
+reflex_chakra
+plotly>=5.17.0
+
+# Basic utilities
+watchdog>=3.0.0
+cryptography>=41.0.0
