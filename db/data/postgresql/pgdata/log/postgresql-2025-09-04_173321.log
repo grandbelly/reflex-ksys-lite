@@ -1,0 +1,48 @@
+2025-09-04 17:33:21.282 GMT [54] LOG:  starting PostgreSQL 16.10 on x86_64-pc-linux-musl, compiled by gcc (Alpine 14.2.0) 14.2.0, 64-bit
+2025-09-04 17:33:21.287 GMT [54] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2025-09-04 17:33:21.336 GMT [58] LOG:  database system was shut down at 2025-09-04 17:33:15 GMT
+2025-09-04 17:33:21.395 GMT [54] LOG:  database system is ready to accept connections
+2025-09-04 17:33:21.400 GMT [61] LOG:  TimescaleDB background worker launcher connected to shared catalogs
+2025-09-04 17:33:21.426 GMT [66] LOG:  connection received: host=[local]
+2025-09-04 17:33:21.430 GMT [66] LOG:  connection authorized: user=ecoanp_user database=postgres application_name=psql
+2025-09-04 17:33:21.528 GMT [66] LOG:  disconnection: session time: 0:00:00.102 user=ecoanp_user database=postgres host=[local]
+2025-09-04 17:33:21.534 GMT [68] LOG:  connection received: host=[local]
+2025-09-04 17:33:21.545 GMT [68] LOG:  connection authorized: user=ecoanp_user database=postgres application_name=psql
+2025-09-04 17:33:23.252 GMT [75] LOG:  connection received: host=[local]
+2025-09-04 17:33:23.263 GMT [75] LOG:  connection authorized: user=ecoanp_user database=ecoanp application_name=pg_isready
+2025-09-04 17:33:23.263 GMT [75] FATAL:  database "ecoanp" does not exist
+2025-09-04 17:33:23.442 GMT [68] LOG:  duration: 1854.516 ms  statement: CREATE DATABASE "ecoanp" ;
+2025-09-04 17:33:23.442 GMT [68] LOG:  disconnection: session time: 0:00:01.908 user=ecoanp_user database=postgres host=[local]
+2025-09-04 17:33:23.455 GMT [79] LOG:  connection received: host=[local]
+2025-09-04 17:33:23.464 GMT [79] LOG:  connection authorized: user=ecoanp_user database=postgres application_name=psql
+2025-09-04 17:33:24.557 GMT [79] LOG:  duration: 1051.614 ms  statement: CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
+2025-09-04 17:33:24.563 GMT [83] LOG:  connection received: host=[local]
+2025-09-04 17:33:24.575 GMT [83] LOG:  connection authorized: user=ecoanp_user database=template1 application_name=psql
+2025-09-04 17:33:24.611 GMT [79] LOG:  disconnection: session time: 0:00:01.155 user=ecoanp_user database=postgres host=[local]
+2025-09-04 17:33:24.629 GMT [80] WARNING:  failed to launch job 3 "Job History Log Retention Policy [3]": failed to start a background worker
+2025-09-04 17:33:25.566 GMT [61] LOG:  no available background worker slots
+2025-09-04 17:33:25.566 GMT [61] HINT:  Consider increasing max_worker_processes in tandem with timescaledb.max_background_workers.
+2025-09-04 17:33:25.590 GMT [86] LOG:  connection received: host=[local]
+2025-09-04 17:33:25.595 GMT [80] WARNING:  failed to launch job 3 "Job History Log Retention Policy [3]": failed to start a background worker
+2025-09-04 17:33:25.601 GMT [86] LOG:  connection authorized: user=ecoanp_user database=ecoanp application_name=psql
+2025-09-04 17:33:25.626 GMT [83] LOG:  disconnection: session time: 0:00:01.062 user=ecoanp_user database=template1 host=[local]
+2025-09-04 17:33:25.948 GMT [87] LOG:  job 3 threw an error
+2025-09-04 17:33:25.958 GMT [87] ERROR:  functionality not supported under the current "apache" license. Learn more at https://tsdb.co/pdbir1r3
+2025-09-04 17:33:25.958 GMT [87] HINT:  To access all features and the best time-series experience, try out Timescale Cloud.
+2025-09-04 17:33:25.962 GMT [54] LOG:  background worker "Job History Log Retention Policy [3]" (PID 87) exited with exit code 1
+2025-09-04 17:33:26.614 GMT [86] LOG:  disconnection: session time: 0:00:01.024 user=ecoanp_user database=ecoanp host=[local]
+2025-09-04 17:33:26.633 GMT [88] WARNING:  failed to launch job 1 "Telemetry Reporter [1]": failed to start a background worker
+2025-09-04 17:33:26.644 GMT [88] WARNING:  failed to launch job 3 "Job History Log Retention Policy [3]": failed to start a background worker
+2025-09-04 17:33:26.648 GMT [88] WARNING:  failed to launch job 1 "Telemetry Reporter [1]": failed to start a background worker
+2025-09-04 17:33:26.653 GMT [88] WARNING:  failed to launch job 3 "Job History Log Retention Policy [3]": failed to start a background worker
+2025-09-04 17:33:26.788 GMT [100] LOG:  connection received: host=[local]
+2025-09-04 17:33:26.797 GMT [100] LOG:  connection authorized: user=ecoanp_user database=ecoanp application_name=psql
+2025-09-04 17:33:27.098 GMT [100] LOG:  disconnection: session time: 0:00:00.309 user=ecoanp_user database=ecoanp host=[local]
+2025-09-04 17:33:27.104 GMT [102] LOG:  connection received: host=[local]
+2025-09-04 17:33:27.114 GMT [102] LOG:  connection authorized: user=ecoanp_user database=ecoanp application_name=psql
+2025-09-04 17:33:27.189 GMT [102] LOG:  disconnection: session time: 0:00:00.085 user=ecoanp_user database=ecoanp host=[local]
+2025-09-04 17:33:27.195 GMT [104] LOG:  connection received: host=[local]
+2025-09-04 17:33:27.204 GMT [104] LOG:  connection authorized: user=ecoanp_user database=ecoanp application_name=psql
+2025-09-04 17:33:27.241 GMT [104] ERROR:  relation "influx_hist" does not exist at character 26
+2025-09-04 17:33:27.241 GMT [104] STATEMENT:  SELECT create_hypertable('influx_hist', 'ts', if_not_exists => TRUE);
+2025-09-04 17:33:27.241 GMT [104] LOG:  disconnection: session time: 0:00:00.046 user=ecoanp_user database=ecoanp host=[local]
